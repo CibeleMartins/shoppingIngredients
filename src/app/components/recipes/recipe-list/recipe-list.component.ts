@@ -9,7 +9,7 @@ import { Recipes } from '../recipes.molde';
 export class RecipeListComponent implements OnInit {
 
   recipes: Recipes[] = [
-    new Recipes('Macarrao', 'cozinhe o tomate com allho e sal', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.tudogostoso.com.br%2Fcardapios%2Freceitas-faceis%2Freceitas-de-macarrao-confira%2F&psig=AOvVaw2yGWbdNw5lIYnvtMtqOznG&ust=1665248557182000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMjIlLfMzvoCFQAAAAAdAAAAABAE')
+    new Recipes('Macarrao', 'cozinhe o tomate com allho e sal', 'https://img.freepik.com/fotos-gratis/fettuccine-de-macarrao-a-bolonhesa-com-molho-de-tomate-em-tigela-branca_2829-20035.jpg?w=2000&t=st=1665164265~exp=1665164865~hmac=311d36234e34e4d968ee0197419e22a22b66e9bc264fdbd61068cb3d1c6f7992')
   ]
 
   constructor() { }
