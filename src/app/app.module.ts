@@ -8,6 +8,8 @@ import { ShoppingListEditComponent } from './components/shopping-list-edit/shopp
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './components/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { RecipeDetailComponent } from './components/recipe-detail/recipe-detail.
     ShoppingListEditComponent,
     RecipeListComponent,
     RecipeItemComponent,
-    RecipeDetailComponent
+    RecipeDetailComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
