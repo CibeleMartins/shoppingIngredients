@@ -4,17 +4,27 @@
         <form>
             <div class="row">
                 <div class="col-sm-5 form-group">
-                    <input placeholder="Name" type="text" class="form-control"/>
+                    <input 
+                    placeholder="Name" 
+                    type="text" 
+                    class="form-control"
+                    #inputNameIngredient
+                    />
                 </div>
 
                 <div class="col-sm-2 form-group">
-                    <input placeholder="Amount" type="number" class="form-control"/>
+                    <input 
+                    #inputAmountIngredient
+                    placeholder="Amount" 
+                    type="number" 
+                    class="form-control"/>
                 </div>
+
             </div>
 
             <div class="row">
                 <div class="col-xs-12">
-                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-success" type="submit" (click)="onAddItem()">Add</button>
                     <button class="btn btn-danger">Delete</button>
                     <button class="btn btn-primary">Clear</button>
                 </div>

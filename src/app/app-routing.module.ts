@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+import { RecipesComponent } from './components/recipes/recipes.component';
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 
+const routes: Routes = [
+  {path: '', component: RecipesComponent},
+  {path: 'shoppList', component: ShoppingListComponent}
 ];
 
 @NgModule({
