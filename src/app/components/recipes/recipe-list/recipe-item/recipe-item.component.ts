@@ -10,16 +10,16 @@ export class RecipeItemComponent implements OnInit {
 
   @Input() recipes: Recipes[];
 
-  @Output() emittDetailRecipe = new EventEmitter<{name: string, description: string}>();
+  @Output() emittDetailRecipe = new EventEmitter<{name: string, description: string, img: string}>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  sendDetailRecipe(recipeName: string, recipeDescription: string) {
+  sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string) {
 
-    this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription})
+    this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
   }
 
 }

@@ -10,6 +10,7 @@ export class RecipeDetailComponent implements OnInit {
 
   @Input() nameRecipe: string;
   @Input () descriptionRecipe: string;
+  @Input() image: string;
 
   constructor() { }
 

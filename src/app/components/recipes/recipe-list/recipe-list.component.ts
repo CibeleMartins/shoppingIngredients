@@ -8,7 +8,7 @@ import { Recipes } from '../recipes.molde';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Output() emittNameDescription = new EventEmitter<{name: string, description: string}>();
+  @Output() emittNameDescription = new EventEmitter<{name: string, description: string, img: string}>();
 
 
   recipes: Recipes[] = [
@@ -23,8 +23,8 @@ export class RecipeListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  receiveDetailRecipe(data: {name: string, description: string}) {
+  receiveDetailRecipe(data: {name: string, description: string, img: string}) {
 
-    this.emittNameDescription.emit({name: data.name, description: data.description})
+    this.emittNameDescription.emit({name: data.name, description: data.description, img: data.img})
   }
 }
