@@ -17,10 +17,11 @@ export class RecipesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  receiveNameDescription(data: {name: string, description: string, image: string}) {
+  receiveNameDescription(data: {name: string, description: string, img: string}) {
 
     this.nameRecipe = data.name;
     this.descriptionRecipe = data.description;
-    this.image = data.image
+    this.image = data.img
+
   }
 }

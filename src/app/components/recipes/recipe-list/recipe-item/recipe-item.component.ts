@@ -20,6 +20,7 @@ export class RecipeItemComponent implements OnInit {
   sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string) {
 
     this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
+    console.log(imagePath)
   }
 
 }
