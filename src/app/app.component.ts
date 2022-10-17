@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'shoppIngredients';
 
-  loadedFeature = 'recipe'
+  loadedFeature = 'recipe';
+  
   renderListOrShopp(feature: string){
     this.loadedFeature = feature
   }
