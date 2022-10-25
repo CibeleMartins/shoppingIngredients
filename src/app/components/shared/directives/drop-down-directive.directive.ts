@@ -12,9 +12,9 @@ export class DropDownDirectiveDirective {
   @HostListener('click', ['$event.target']) onClick(evenData: Event) {
 
     if(!this.class) {
-      this.class = "btn-group open"
+      this.class = "btn-group open";
     } else {
-      this.class = ""
+      this.class = "";
     }
   }
 
