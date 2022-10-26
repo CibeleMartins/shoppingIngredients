@@ -22,13 +22,14 @@ export class RecipesComponent implements OnInit {
     this.recipeService.recipeSelected.subscribe((recipe: Recipes)=> {
       this.selectedRecipe = recipe;
     })
-  }
-
-  receiveNameDescription(data: {name: string, description: string, img: string}) {
-
-    this.nameRecipe = data.name;
-    this.descriptionRecipe = data.description;
-    this.image = data.img
 
   }
+
+  // receiveNameDescription(data: {name: string, description: string, img: string}) {
+
+  //   this.nameRecipe = data.name;
+  //   this.descriptionRecipe = data.description;
+  //   this.image = data.img
+
+  // }
 }

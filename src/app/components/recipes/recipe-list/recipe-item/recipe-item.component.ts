@@ -17,7 +17,7 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendDetailRecipe() {
+  sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string) {
 
     this.recipeService.recipeSelected.emit(this.recipes)
     // this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
