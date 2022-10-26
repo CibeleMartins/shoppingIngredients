@@ -10,20 +10,19 @@ import { RecipeService } from '../../services/RecipeService.service';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Output() emittNameDescription = new EventEmitter<{name: string, description: string, img: string}>();
+  // @Output() emittNameDescription = new EventEmitter<{name: string, description: string, img: string}>();
 
   recipes: Recipes[];
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit(): void {
-
     this.recipes = this.recipeService.getRecipes();
   }
 
-  receiveDetailRecipe(data: {name: string, description: string, img: string}) {
+  // receiveDetailRecipe(data: {name: string, description: string, img: string}) {
 
-    this.emittNameDescription.emit({name: data.name, description: data.description, img: data.img})
-    console.log(data.img)
-  }
+  //   this.emittNameDescription.emit({name: data.name, description: data.description, img: data.img})
+  //   console.log(data.img)
+  // }
 }
