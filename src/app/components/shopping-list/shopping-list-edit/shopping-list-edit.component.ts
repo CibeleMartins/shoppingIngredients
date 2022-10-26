@@ -18,7 +18,7 @@ export class ShoppingListEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddItem() {
+  onAddItem(event: Event) {
 
     event.preventDefault();
 
