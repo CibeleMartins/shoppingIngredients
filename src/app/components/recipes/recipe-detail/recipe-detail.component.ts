@@ -8,9 +8,11 @@ import { Recipes } from '../recipes.molde';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  @Input() nameRecipe: string;
-  @Input () descriptionRecipe: string;
-  @Input() image: string;
+  // @Input() nameRecipe: string;
+  // @Input () descriptionRecipe: string;
+  // @Input() image: string;
+
+  @Input() selectedRecipe: Recipes;
 
   constructor() { }
 

@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-xs-12">
-        <img [src]="image" alt="{{nameRecipe}}" class="img-respon">
+        <img [src]="selectedRecipe[2]" class="img-respon">
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>{{nameRecipe}}</h1>
+        <h1>{{selectedRecipe[0]}}</h1>
     </div>
 </div>
 
@@ -28,7 +28,7 @@
 
 <div class="row">
     <div class="col-xs-12">
-        {{descriptionRecipe}}
+        {{selectedRecipe[3]}}
     </div>
 </div>
 

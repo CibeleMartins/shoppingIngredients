@@ -17,11 +17,11 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string) {
+  sendDetailRecipe() {
 
     this.recipeService.recipeSelected.emit(this.recipes)
     // this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
-    console.log(imagePath)
+    console.log(this.recipes)
   }
 
 }
