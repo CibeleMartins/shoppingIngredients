@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Recipes } from '../../recipes.molde';
 import { RecipeService } from 'src/app/components/services/RecipeService.service';
+import { Ingredients } from 'src/app/components/shared/ingredients.model';
 @Component({
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
@@ -17,14 +18,15 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string) {
+  sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string, ingredients: Ingredients[]) {
 
 
-    this.recipeService.recipeSelected.emit({name: recipeName, description: recipeDescription, image: imagePath})
+    this.recipeService.recipeSelected.emit({name: recipeName, description: recipeDescription, image: imagePath, ingredients: ingredients})
     // this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
-    console.log(this.recipes)
+    // console.log(this.recipes)
 
-    console.log(recipeName)
+    // console.log(ingredients)
+    // console.log(recipeName)
   }
 
 }

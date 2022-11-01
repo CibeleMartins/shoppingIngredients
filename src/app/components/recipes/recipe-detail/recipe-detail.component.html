@@ -34,7 +34,9 @@
 
 <div class="row">
     <div class="col-xs-12">
-        Ingredients
+        <ul *ngFor="let ingredients of igdt">
+          <li>{{ingredients.name}} - {{ingredients.amount}}</li>
+        </ul>
     </div>
 </div>
 
