@@ -7,16 +7,19 @@ import { Ingredients } from "../shared/ingredients.model";
 
 export class ShoppinListService {
 
-    emittIngredient = new EventEmitter<Ingredients>();
+    emittIngredient = new EventEmitter<Ingredients[]>();
 
-    ingredients: Ingredients[] = [
+   private ingredients: Ingredients[] = [
         new Ingredients ('Molho de tomate', 12.00)
-      ];
+    ];
 
-
+    getIngredients() {
+        return this.ingredients.slice();
+    }
 
     addIngredients(ingredient: Ingredients) {
         
-        this.ingredients.push(ingredient)
+        this.ingredients.push(ingredient);
+        this.emittIngredient.emit(this.ingredients.slice())
     }
 }
