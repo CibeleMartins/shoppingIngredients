@@ -22,4 +22,11 @@ export class ShoppinListService {
         this.ingredients.push(ingredient);
         this.emittIngredient.emit(this.ingredients.slice())
     }
+
+    addIngredientsOfDetails(ingredients: Ingredients[]) {
+
+        this.ingredients.push(...ingredients)
+        this.emittIngredient.emit(this.ingredients.slice())
+    }
+
 }
