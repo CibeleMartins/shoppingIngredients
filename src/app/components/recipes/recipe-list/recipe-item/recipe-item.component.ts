@@ -8,7 +8,7 @@ import { RecipeService } from 'src/app/components/services/RecipeService.service
 })
 export class RecipeItemComponent implements OnInit {
 
-  @Input() recipes: Recipes;
+  @Input() recipes: Recipes[];
 
   // @Output() emittDetailRecipe = new EventEmitter<{name: string, description: string, img: string}>();
 
@@ -19,9 +19,12 @@ export class RecipeItemComponent implements OnInit {
 
   sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string) {
 
-    this.recipeService.recipeSelected.emit(this.recipes)
+
+    this.recipeService.recipeSelected.emit({name: recipeName, description: recipeDescription, image: imagePath})
     // this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
     console.log(this.recipes)
+
+    console.log(recipeName)
   }
 
 }

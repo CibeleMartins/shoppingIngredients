@@ -9,7 +9,7 @@ import { Recipes } from './recipes.molde';
 })
 export class RecipesComponent implements OnInit {
 
-  selectedRecipe: Recipes;
+  selectedRecipe: {name: string, description: string, image: string};
 
   nameRecipe: string;
   descriptionRecipe: string;
@@ -19,10 +19,21 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.recipeService.recipeSelected.subscribe((recipe: Recipes)=> {
+    this.recipeService.recipeSelected.subscribe((recipe: {name: string, description: string, image: string})=> {
       this.selectedRecipe = recipe;
+      
+      console.log(this.selectedRecipe.name)
+
+      this.nameRecipe = this.selectedRecipe.name
+      this.descriptionRecipe = this.selectedRecipe.description
+      this.image = this.selectedRecipe.image
     })
 
+    // this.selectedRecipe.map((r)=> {
+    //   this.nameRecipe = r.name
+    //   this.descriptionRecipe = r.description
+    //   this.image = r.imagePath
+    // })
   }
 
   // receiveNameDescription(data: {name: string, description: string, img: string}) {

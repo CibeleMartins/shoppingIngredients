@@ -8,15 +8,17 @@ import { Recipes } from '../recipes.molde';
 })
 export class RecipeDetailComponent implements OnInit {
   
-  nameRecipe: string;
-  descriptionRecipe: string;
-  image: string;
+  @Input() nameRecipe: string;
+  @Input() descriptionRecipe: string;
+  @Input() image: string;
 
-  @Input() selectedRecipe: Recipes;
+  @Input() selectedRecipe: {name: string, description: string, image: string};
 
   constructor() { }
 
   ngOnInit(): void {
+
+    console.log(this.nameRecipe)
 
     // this.selectedRecipe.map((i)=> {
 
@@ -26,6 +28,7 @@ export class RecipeDetailComponent implements OnInit {
     // })
    
   }
+
 
   
 
