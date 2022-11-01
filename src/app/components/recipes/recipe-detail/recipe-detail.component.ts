@@ -12,24 +12,11 @@ export class RecipeDetailComponent implements OnInit {
   @Input() descriptionRecipe: string;
   @Input() image: string;
 
-  @Input() selectedRecipe: {name: string, description: string, image: string};
-
   constructor() { }
 
   ngOnInit(): void {
 
-    console.log(this.nameRecipe)
-
-    // this.selectedRecipe.map((i)=> {
-
-    //   this.nameRecipe = i.name
-    //   this.descriptionRecipe= i.description
-    //   this.image = i.imagePath
-    // })
-   
   }
 
-
-  
 
 }
