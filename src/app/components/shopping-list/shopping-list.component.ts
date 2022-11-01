@@ -9,18 +9,24 @@ import { ShoppinListService } from '../services/ShoppingListService.service';
 })
 export class ShoppingListComponent implements OnInit {
 
-  ingredients: Ingredients[] = [
-    new Ingredients ('Molho de tomate', 12.00)
-  ];
+  ingredients: Ingredients[];
 
-  constructor() { }
+  constructor(private serviceList: ShoppinListService) { }
 
   ngOnInit(): void {
+
+    this.serviceList.emittIngredient.subscribe((ingredient: Ingredients)=> {
+
+      this.serviceList.addIngredients(ingredient)
+
+    })
+
+    this.ingredients = this.serviceList.ingredients
   }
 
-  onIngredientAdded(ingredient: Ingredients) {
+  // onIngredientAdded(ingredient: Ingredients) {
 
-    this.ingredients.push(ingredient)
-  }
+  //   this.ingredients.push(ingredient)
+  // }
 
 }
