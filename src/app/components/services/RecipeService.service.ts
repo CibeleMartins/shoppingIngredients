@@ -32,7 +32,12 @@ export class RecipeService {
       return this.recipes.slice();
     }
 
+    getRecipesByIndex(index: number) {
 
+      let arrayCopy = this.recipes.slice();
+
+      return arrayCopy[index]
+    }
 
     addIngredientsShoppList(ingredients: Ingredients[]) {
 

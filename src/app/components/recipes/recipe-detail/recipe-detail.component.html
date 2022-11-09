@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-xs-12">
-        <img [src]="image" class="img-respon">
+        <img [src]="recipes.imagePath" class="img-respon">
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>{{nameRecipe}}</h1>
+        <h1>{{recipes.name}}</h1>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
             </button>
 
             <ul class="dropdown-menu">
-                <li style="cursor: pointer;" (click)="addIngredientsShoppList(igdt)"><a>To shopping list</a></li>
+                <li style="cursor: pointer;" (click)="addIngredientsShoppList(recipes.ingredients)"><a>To shopping list</a></li>
                 <li style="cursor: pointer;" ><a>Edit Recip</a></li>
                 <li style="cursor: pointer;" ><a>Delete Recipe</a></li>
             </ul>
@@ -28,13 +28,13 @@
 
 <div class="row">
     <div class="col-xs-12">
-        {{descriptionRecipe}}
+        {{recipes.description}}
     </div>
 </div>
 
 <div class="row">
     <div class="col-xs-12">
-        <ul *ngFor="let ingredients of igdt">
+        <ul *ngFor="let ingredients of recipes.ingredients">
           <li style="cursor: pointer ;">{{ingredients.name}} - {{ingredients.amount}}</li>
         </ul>
     </div>

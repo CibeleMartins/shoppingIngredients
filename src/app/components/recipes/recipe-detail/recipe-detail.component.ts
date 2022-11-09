@@ -4,6 +4,7 @@ import { Ingredients } from '../../shared/ingredients.model';
 import { RecipeService } from '../../services/RecipeService.service';
 
 import { ActivatedRoute, Params } from '@angular/router';
+import { Recipes } from '../recipes.molde';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -12,10 +13,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class RecipeDetailComponent implements OnInit {
   
-  @Input() nameRecipe: string;
-  @Input() descriptionRecipe: string;
-  @Input() image: string;
-  @Input () igdt: Ingredients[];
+  // @Input() nameRecipe: string;
+  // @Input() descriptionRecipe: string;
+  // @Input() image: string;
+  // @Input () igdt: Ingredients[];
+
+  recipes: Recipes;
 
   constructor(private recipeService: RecipeService, private currentRoute: ActivatedRoute) { }
 
@@ -26,8 +29,12 @@ export class RecipeDetailComponent implements OnInit {
 
     this.currentRoute.params.subscribe((params: Params)=> {
 
-      console.log(params['id'])
+      console.log(params['id']);
+
+      this.recipes = this.recipeService.getRecipesByIndex(+params['id']);
     })
+
+   
   }
 
   addIngredientsShoppList(ingredients: Ingredients[]) {
