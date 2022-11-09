@@ -1,10 +1,8 @@
-button {
-
-    width: 80%;
-    height: 40px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    background-color: cornflowerblue;
-
+div {
+    display: flex ;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    font-weight: 100;
 }

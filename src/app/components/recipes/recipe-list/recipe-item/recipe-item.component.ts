@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Recipes } from '../../recipes.molde';
 import { RecipeService } from 'src/app/components/services/RecipeService.service';
 import { Ingredients } from 'src/app/components/shared/ingredients.model';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
@@ -13,7 +14,7 @@ export class RecipeItemComponent implements OnInit {
 
   // @Output() emittDetailRecipe = new EventEmitter<{name: string, description: string, img: string}>();
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,9 +22,12 @@ export class RecipeItemComponent implements OnInit {
   sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string, ingredients: Ingredients[]) {
 
 
-    this.recipeService.recipeSelected.emit({name: recipeName, description: recipeDescription, image: imagePath, ingredients: ingredients})
+    // this.recipeService.recipeSelected.emit({name: recipeName, description: recipeDescription, image: imagePath, ingredients: ingredients})
     // this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
     // console.log(this.recipes)
+
+
+    this.router.navigate(['/recipes', recipeName, recipeDescription, imagePath, ingredients, 'detail']);
 
     // console.log(ingredients)
     // console.log(recipeName)
