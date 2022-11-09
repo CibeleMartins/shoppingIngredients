@@ -12,11 +12,7 @@ import { Recipes } from '../recipes.molde';
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit {
-  
-  // @Input() nameRecipe: string;
-  // @Input() descriptionRecipe: string;
-  // @Input() image: string;
-  // @Input () igdt: Ingredients[];
+
 
   recipes: Recipes;
 

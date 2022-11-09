@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { DropDownDirectiveDirective } from './components/shared/directives/drop-down-directive.directive';
 import { SelectRecipeComponent } from './components/recipes/select-recipe/select-recipe.component';
+import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { SelectRecipeComponent } from './components/recipes/select-recipe/select
     RecipesComponent,
     DropDownDirectiveDirective,
     SelectRecipeComponent,
+    RecipeEditComponent,
   
   ],
   imports: [

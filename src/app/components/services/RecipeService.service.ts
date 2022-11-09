@@ -36,7 +36,7 @@ export class RecipeService {
 
       let arrayCopy = this.recipes.slice();
 
-      return arrayCopy[index]
+      return arrayCopy[index];
     }
 
     addIngredientsShoppList(ingredients: Ingredients[]) {
