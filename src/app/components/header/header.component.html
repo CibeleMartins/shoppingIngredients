@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a routerLink="/" class="navbar-brand">Recipe Book</a>
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="navbar-brand">Recipe Book</a>
             <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
                 <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
             </button>
@@ -9,8 +9,8 @@
 
         <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
-                <li href="#" routerLink="/"><a>Recipes</a></li>
-                <li href="#" routerLink="/shoppList"><a>Shopping List</a></li>
+                <li routerLink="/recipes" routerLinkActive="colorRoute"><a>Recipes</a></li>
+                <li routerLink="/shoppList" routerLinkActive="colorRoute"><a>Shopping List</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
