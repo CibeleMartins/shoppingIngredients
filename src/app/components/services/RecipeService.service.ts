@@ -32,6 +32,8 @@ export class RecipeService {
       return this.recipes.slice();
     }
 
+
+
     addIngredientsShoppList(ingredients: Ingredients[]) {
 
       this.shoppListService.addIngredientsOfDetails(ingredients)

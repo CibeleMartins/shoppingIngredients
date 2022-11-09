@@ -3,7 +3,7 @@ import { Ingredients } from '../../shared/ingredients.model';
 // import { Recipes } from '../recipes.molde';
 import { RecipeService } from '../../services/RecipeService.service';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -20,14 +20,14 @@ export class RecipeDetailComponent implements OnInit {
   constructor(private recipeService: RecipeService, private currentRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // console.log(this.ingredients)
+    // console.log(this.ingredients
 
-    this.currentRoute.snapshot.params['name']
-    this.currentRoute.snapshot.params['description']
-    this.currentRoute.snapshot.params['image']
-    this.currentRoute.snapshot.params['ingredients']
+    console.log( this.currentRoute.snapshot.params['id'])
 
-    console.log(    this.currentRoute.snapshot.params['ingredients'])
+    this.currentRoute.params.subscribe((params: Params)=> {
+
+      console.log(params['id'])
+    })
   }
 
   addIngredientsShoppList(ingredients: Ingredients[]) {

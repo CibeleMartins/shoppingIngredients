@@ -19,15 +19,13 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendDetailRecipe(recipeName: string, recipeDescription: string, imagePath: string, ingredients: Ingredients[]) {
-
+  sendDetailRecipe(index: number) {
 
     // this.recipeService.recipeSelected.emit({name: recipeName, description: recipeDescription, image: imagePath, ingredients: ingredients})
     // this.emittDetailRecipe.emit({name: recipeName, description: recipeDescription, img: imagePath})
     // console.log(this.recipes)
 
-
-    this.router.navigate(['/recipes', recipeName, recipeDescription, imagePath, ingredients, 'detail']);
+    this.router.navigate(['/recipes', index]);
 
     // console.log(ingredients)
     // console.log(recipeName)

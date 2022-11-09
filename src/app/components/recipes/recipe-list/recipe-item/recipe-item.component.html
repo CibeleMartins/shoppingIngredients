@@ -1,7 +1,7 @@
-<a style="cursor: pointer;" class="list-group-item clearfix" *ngFor="let recipe of recipes" (click)="sendDetailRecipe(recipe.name, recipe.description, recipe.imagePath, recipe.ingredients)">
+<a style="cursor: pointer;" class="list-group-item clearfix" *ngFor="let recipe of recipes; let i = index" (click)="sendDetailRecipe(i)">
     <div class="pull-left">
         <h4 class="list-item-heading">{{recipe.name}}</h4>
-        <p class="list-group-item-text">{{recipe.description}}</p>
+        <p class="list-group-item-text">{{recipe.description}} {{i}}</p>
     </div>
 
     <span class="pull-right">
