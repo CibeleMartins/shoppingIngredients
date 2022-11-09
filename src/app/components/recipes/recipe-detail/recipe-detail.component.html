@@ -18,9 +18,9 @@
             </button>
 
             <ul class="dropdown-menu">
-                <li href="#" (click)="addIngredientsShoppList(igdt)"><a>To shopping list</a></li>
-                <li href="#"><a>Edit Recip</a></li>
-                <li href="#"><a>Delete Recipe</a></li>
+                <li style="cursor: pointer;" (click)="addIngredientsShoppList(igdt)"><a>To shopping list</a></li>
+                <li style="cursor: pointer;" ><a>Edit Recip</a></li>
+                <li style="cursor: pointer;" ><a>Delete Recipe</a></li>
             </ul>
         </div>
     </div>
@@ -35,7 +35,7 @@
 <div class="row">
     <div class="col-xs-12">
         <ul *ngFor="let ingredients of igdt">
-          <li>{{ingredients.name}} - {{ingredients.amount}}</li>
+          <li style="cursor: pointer ;">{{ingredients.name}} - {{ingredients.amount}}</li>
         </ul>
     </div>
 </div>

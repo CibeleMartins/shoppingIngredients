@@ -12,6 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { DropDownDirectiveDirective } from './components/shared/directives/drop-down-directive.directive';
+import { SelectRecipeComponent } from './components/recipes/select-recipe/select-recipe.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DropDownDirectiveDirective } from './components/shared/directives/drop-
     HeaderComponent,
     FooterComponent,
     RecipesComponent,
-    DropDownDirectiveDirective
+    DropDownDirectiveDirective,
+    SelectRecipeComponent,
+  
   ],
   imports: [
     BrowserModule,
