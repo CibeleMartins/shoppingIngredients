@@ -20,7 +20,7 @@ export class RecipeEditComponent implements OnInit {
 
       const id = +params['id'];
 
-      this.recipeService.getRecipesByIndex(id)
+      this.recipesEdit = this.recipeService.getRecipesByIndex(id)
 
       this.editMode = params['id'] != null;
 
