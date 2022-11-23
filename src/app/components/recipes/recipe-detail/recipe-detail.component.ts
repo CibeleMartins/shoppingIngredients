@@ -9,43 +9,37 @@ import { Recipes } from '../recipes.molde';
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
-  styleUrls: ['./recipe-detail.component.css']
+  styleUrls: ['./recipe-detail.component.css'],
 })
 export class RecipeDetailComponent implements OnInit {
-
-
   recipes: Recipes;
   id: number;
 
-  constructor(private recipeService: RecipeService, private currentRoute: ActivatedRoute, private router: Router) { }
+  constructor(
+    private recipeService: RecipeService,
+    private currentRoute: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     // console.log(this.ingredients
 
-    console.log( this.currentRoute.snapshot.params['id'])
+    console.log(this.currentRoute.snapshot.params['id']);
 
-    this.currentRoute.params.subscribe((params: Params)=> {
-
+    this.currentRoute.params.subscribe((params: Params) => {
       console.log(params['id']);
 
-      this.id = +params['id']
+      this.id = +params['id'];
 
-      this.recipes = this.recipeService.getRecipesByIndex(this.id)
-    })
-
-   
+      this.recipes = this.recipeService.getRecipesByIndex(this.id);
+    });
   }
 
-  navigateForEditRecipe () {
-
-    this.router.navigate(['/recipes', this.id, 'edit'])
-
+  navigateForEditRecipe() {
+    this.router.navigate(['/recipes', this.id, 'edit']);
   }
 
   addIngredientsShoppList(ingredients: Ingredients[]) {
-   
-    this.recipeService.addIngredientsShoppList(ingredients)
-    
+    this.recipeService.addIngredientsShoppList(ingredients);
   }
-
 }
