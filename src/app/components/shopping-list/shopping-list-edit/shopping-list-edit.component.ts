@@ -25,7 +25,6 @@ export class ShoppingListEditComponent implements OnInit {
   editedItemIndex: number;
   editedItem: Ingredients;
 
-
   constructor(private serviceList: ShoppinListService) {}
 
   ngOnInit(): void {
@@ -34,11 +33,11 @@ export class ShoppingListEditComponent implements OnInit {
         this.editMode = true;
         this.editedItemIndex = index;
         this.editedItem = this.serviceList.getIngredientByIndex(index);
-        console.log(this.editedItem)
+        console.log(this.editedItem);
         this.formEdit.setValue({
           nameIngredient: this.editedItem.name,
-          amountIngredient: this.editedItem.amount
-        })
+          amountIngredient: this.editedItem.amount,
+        });
       }
     );
   }
@@ -49,7 +48,7 @@ export class ShoppingListEditComponent implements OnInit {
       f.value.amountIngredient
     );
 
-    if(this.editMode) {
+    if (this.editMode) {
       this.serviceList.updatedIngredient(this.editedItemIndex, newIngredient);
       this.editMode = false;
     } else {
