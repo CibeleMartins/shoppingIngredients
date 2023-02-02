@@ -10,6 +10,7 @@ import { Ingredients } from '../../shared/ingredients.model';
 
 import { ShoppinListService } from '../../services/ShoppingListService.service';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -17,16 +18,30 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./shopping-list-edit.component.css'],
 })
 export class ShoppingListEditComponent implements OnInit {
-  // @ViewChild('inputNameIngredient', { static: true })
-  // inputNameIngredient: ElementRef;
-  // @ViewChild('inputAmountIngredient', { static: true })
-  // inputAmountIngredient: ElementRef;
+  @ViewChild('f', { static: true }) formEdit: NgForm;
 
-  // @Output() ingredientAdded = new EventEmitter<Ingredients>();
+  subscription: Subscription;
+  editMode: boolean = false;
+  editedItemIndex: number;
+  editedItem: Ingredients;
+
 
   constructor(private serviceList: ShoppinListService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subscription = this.serviceList.emittIdIngredientEditing.subscribe(
+      (index: number) => {
+        this.editMode = true;
+        this.editedItemIndex = index;
+        this.editedItem = this.serviceList.getIngredientByIndex(index);
+        console.log(this.editedItem)
+        this.formEdit.setValue({
+          nameIngredient: this.editedItem.name,
+          amountIngredient: this.editedItem.amount
+        })
+      }
+    );
+  }
 
   onAddItem(event: Event, f: NgForm): void {
     event.preventDefault();
@@ -35,7 +50,10 @@ export class ShoppingListEditComponent implements OnInit {
     // const nameIngredient = this.inputNameIngredient.nativeElement.value;
     // const amountIngredient = this.inputAmountIngredient.nativeElement.value;
 
-    const newIngredient = new Ingredients(f.value.nameIngredient, f.value.amountIngredient);
+    const newIngredient = new Ingredients(
+      f.value.nameIngredient,
+      f.value.amountIngredient
+    );
 
     this.serviceList.addIngredients(newIngredient);
   }
