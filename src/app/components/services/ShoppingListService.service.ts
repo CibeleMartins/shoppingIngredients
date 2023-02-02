@@ -19,7 +19,7 @@ export class ShoppinListService {
     }
 
     addIngredients(ingredient: Ingredients) {
-        
+        console.log(ingredient)
         this.ingredients.push(ingredient);
         this.emittIngredient.next(this.ingredients.slice())
     }
