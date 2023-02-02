@@ -8,6 +8,7 @@ export class ShoppinListService {
 
     emittIngredient = new Subject<Ingredients[]>();
     emittIdIngredientEditing = new Subject<number>();
+  
 
    private ingredients: Ingredients[] = [
         new Ingredients ('Molho de tomate', 12.00)
@@ -33,6 +34,11 @@ export class ShoppinListService {
 
         this.ingredients.push(...ingredients)
         this.emittIngredient.next(this.ingredients.slice())
+    }
+
+    updatedIngredient(index: number, newIngredient: Ingredients) {
+        this.ingredients[index] = newIngredient;
+        return this.emittIngredient.next(this.ingredients.slice());
     }
 
 }

@@ -44,17 +44,23 @@ export class ShoppingListEditComponent implements OnInit {
   }
 
   onAddItem(event: Event, f: NgForm): void {
-    event.preventDefault();
-    event.stopPropagation();
-
-    // const nameIngredient = this.inputNameIngredient.nativeElement.value;
-    // const amountIngredient = this.inputAmountIngredient.nativeElement.value;
+    // event.preventDefault();
+    // event.stopPropagation();
 
     const newIngredient = new Ingredients(
       f.value.nameIngredient,
       f.value.amountIngredient
     );
 
-    this.serviceList.addIngredients(newIngredient);
+    if(this.editMode) {
+      this.serviceList.updatedIngredient(this.editedItemIndex, newIngredient);
+    } else {
+      this.serviceList.addIngredients(newIngredient);
+    }
+
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
