@@ -16,7 +16,7 @@ export class ShoppinListService {
 
     getIngredientByIndex(index: number) {
 
-        console.log(this.ingredients[index])
+        // console.log(this.ingredients[index])
        return this.ingredients[index];
     }
 
@@ -25,9 +25,10 @@ export class ShoppinListService {
     }
 
     addIngredients(ingredient: Ingredients) {
-        console.log(ingredient)
+        // console.log(ingredient)
         this.ingredients.push(ingredient);
         this.emittIngredient.next(this.ingredients.slice())
+        console.log(this.ingredients)
     }
 
     addIngredientsOfDetails(ingredients: Ingredients[]) {
@@ -39,6 +40,14 @@ export class ShoppinListService {
     updatedIngredient(index: number, newIngredient: Ingredients) {
         this.ingredients[index] = newIngredient;
         return this.emittIngredient.next(this.ingredients.slice());
+    }
+
+    deleteIngredientByIndex(index: number) {
+
+
+        this.ingredients.splice(index, 1);
+        this.emittIngredient.next(this.ingredients.slice());
+        console.log(this.ingredients)
     }
 
 }
